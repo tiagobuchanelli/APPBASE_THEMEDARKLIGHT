@@ -1,4 +1,4 @@
-import 'package:lanca_app/models/messages.model.dart';
+import 'package:appbase_themedarklight/models/messages.model.dart';
 
 final List<MessagestModel> listsMessages = <MessagestModel>[
   new MessagestModel(

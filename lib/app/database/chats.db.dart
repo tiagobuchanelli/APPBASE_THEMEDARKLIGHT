@@ -1,4 +1,4 @@
-import 'package:lanca_app/models/chat.model.dart';
+import 'package:appbase_themedarklight/models/chat.model.dart';
 
 final List<ChatModel> OSPSOSOKDJD_chat_default = <ChatModel>[
   new ChatModel(

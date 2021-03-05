@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'cards/tab-movements-card.dart';
 
-class TabPendingMovements extends StatelessWidget {
+class TabPendingMovements extends StatefulWidget {
+  @override
+  _TabPendingMovementsState createState() => _TabPendingMovementsState();
+}
+
+class _TabPendingMovementsState extends State<TabPendingMovements> {
   @override
   Widget build(BuildContext context) {
     return Container(

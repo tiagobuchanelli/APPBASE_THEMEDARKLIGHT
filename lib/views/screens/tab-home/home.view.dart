@@ -26,19 +26,10 @@ class _HomeViewState extends State<HomeView> {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Padding(
-                padding: EdgeInsets.only(top: 50, left: 50, right: 50),
-                child: Text(
-                  "Home",
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ),
-            )
-          ],
+      body: Center(
+        child: Text(
+          "Home",
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
     );

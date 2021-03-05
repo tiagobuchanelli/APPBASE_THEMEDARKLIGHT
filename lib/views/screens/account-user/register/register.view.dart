@@ -36,13 +36,13 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       appBar: BaseAppBar(
         title: "",
-        backgroundColor: Colors.white,
+        //backgroundColor: Colors.white,
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 40, left: 24, right: 24, bottom: 10),
+        padding: EdgeInsets.only(top: 60, left: 24, right: 24, bottom: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -51,22 +51,23 @@ class _RegisterViewState extends State<RegisterView> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Sacai",
+                  "APP Teste",
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      color: AppTheme().primaryColor,
+                      color: Theme.of(context).primaryColorDark,
                       fontFamily: "Ramabhadra",
                       fontSize: 48),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 30),
+                padding: EdgeInsets.only(bottom: 30, top: 10),
                 child: Center(
                   child: Text(
                     "Cadastre-se!",
-                    style: AppTheme().textTheme.headline2.copyWith(
-                        color: Colors.black.withOpacity(0.7),
-                        fontWeight: FontWeight.normal),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline2
+                        .copyWith(fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -76,19 +77,18 @@ class _RegisterViewState extends State<RegisterView> {
                   controller: _emailCtrl,
                   autofocus: false,
                   keyboardType: TextInputType.emailAddress,
-                  style: AppTheme().textTheme.headline2.copyWith(
-                      color: Colors.black.withOpacity(0.7),
-                      fontWeight: FontWeight.normal),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(28, 16, 28, 16),
                       hintText: "E-mail",
+                      hintStyle: Theme.of(context).textTheme.headline2,
                       filled: true,
-                      fillColor: Colors.transparent,
+                      fillColor: Theme.of(context).primaryColor,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
                               //color: Theme.of(context).primaryColor, width: 2)),
-                              color: Colors.grey[300],
+                              color: Theme.of(context).primaryColor,
                               width: 1)),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -120,13 +120,14 @@ class _RegisterViewState extends State<RegisterView> {
                       ),
                       contentPadding: EdgeInsets.fromLTRB(28, 16, 28, 16),
                       hintText: "Senha",
+                      hintStyle: Theme.of(context).textTheme.headline2,
                       filled: true,
-                      fillColor: Colors.transparent,
+                      fillColor: Theme.of(context).primaryColor,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
                               //color: Theme.of(context).primaryColor, width: 2)),
-                              color: Colors.grey[300],
+                              color: Theme.of(context).primaryColor,
                               width: 1)),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -139,8 +140,7 @@ class _RegisterViewState extends State<RegisterView> {
                 padding: EdgeInsets.only(top: 20, bottom: 20),
                 child: RaisedButton(
                   child: Text("Cadastrar",
-                      style: AppTheme().textTheme.headline2.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.normal)),
+                      style: Theme.of(context).textTheme.headline2),
                   color: Theme.of(context).primaryColor,
                   elevation: 0,
                   padding: EdgeInsets.fromLTRB(28, 15, 28, 15),
@@ -166,10 +166,7 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                   Text(
                     "ou",
-                    style: AppTheme()
-                        .textTheme
-                        .headline3
-                        .copyWith(color: Colors.grey),
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   Expanded(
                     child: new Container(
@@ -192,11 +189,12 @@ class _RegisterViewState extends State<RegisterView> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {},
-                          color: Colors.grey[50],
+                          color: Theme.of(context).primaryColor,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30),
-                              side: BorderSide(color: Colors.grey[200])),
+                              side: BorderSide(
+                                  color: Theme.of(context).primaryColor)),
                           child: Container(
                             padding: EdgeInsets.all(10),
                             child: Padding(
@@ -218,11 +216,12 @@ class _RegisterViewState extends State<RegisterView> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {},
-                          color: Colors.grey[50],
+                          color: Theme.of(context).primaryColor,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30),
-                              side: BorderSide(color: Colors.grey[200])),
+                              side: BorderSide(
+                                  color: Theme.of(context).primaryColor)),
                           child: Container(
                             padding: EdgeInsets.all(10),
                             child: Padding(
@@ -244,11 +243,12 @@ class _RegisterViewState extends State<RegisterView> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {},
-                          color: Colors.grey[50],
+                          color: Theme.of(context).primaryColor,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30),
-                              side: BorderSide(color: Colors.grey[200])),
+                              side: BorderSide(
+                                  color: Theme.of(context).primaryColor)),
                           child: Container(
                             padding: EdgeInsets.all(10),
                             child: Padding(

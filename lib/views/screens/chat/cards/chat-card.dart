@@ -1,6 +1,7 @@
-import 'package:appbase_themedarklight/app/themes/app.theme.dart';
 import 'package:appbase_themedarklight/models/chat.model.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../main.dart';
 
 class ChatCard extends StatelessWidget {
   ChatModel listChat;
@@ -36,9 +37,7 @@ class ChatCard extends StatelessWidget {
                   padding:
                       EdgeInsets.only(left: 25, right: 25, top: 15, bottom: 15),
                   decoration: BoxDecoration(
-                    color: listChat.idEvent == 0
-                        ? AppTheme().primaryColor
-                        : Colors.white,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: new BorderRadius.only(
                       //topLeft: const Radius.circular(40.0),
                       topRight: const Radius.circular(20.0),
@@ -51,10 +50,10 @@ class ChatCard extends StatelessWidget {
                     listChat.chat,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 5,
-                    style: AppTheme()
-                        .textTheme
-                        .headline3
-                        .copyWith(color: Colors.white),
+                    style: Theme.of(context).textTheme.headline3.copyWith(
+                        color: globalController.isLightThemeGlobal
+                            ? Colors.black
+                            : Colors.white),
                   )),
             ],
           ),
@@ -63,7 +62,7 @@ class ChatCard extends StatelessWidget {
           ),
           Text(
             listChat.date,
-            style: AppTheme()
+            style: Theme.of(context)
                 .textTheme
                 .headline3
                 .copyWith(color: Colors.grey[600]),
@@ -81,7 +80,7 @@ class ChatCard extends StatelessWidget {
         children: <Widget>[
           Text(
             listChat.date,
-            style: AppTheme()
+            style: Theme.of(context)
                 .textTheme
                 .headline3
                 .copyWith(color: Colors.grey[600]),
@@ -97,8 +96,7 @@ class ChatCard extends StatelessWidget {
                   padding:
                       EdgeInsets.only(left: 25, right: 25, top: 15, bottom: 15),
                   decoration: BoxDecoration(
-                    color:
-                        listChat.idEvent == 1 ? Colors.grey[300] : Colors.white,
+                    color: Theme.of(context).primaryColorDark,
                     borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(20.0),
                       topRight: const Radius.circular(20.0),
@@ -111,7 +109,10 @@ class ChatCard extends StatelessWidget {
                     listChat.chat,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 5,
-                    style: AppTheme().textTheme.headline3,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline3
+                        .copyWith(color: Colors.white),
                   )),
               /*Padding(
                 padding: EdgeInsets.only(right: 20),

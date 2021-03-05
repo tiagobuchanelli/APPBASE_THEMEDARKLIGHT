@@ -1,4 +1,4 @@
-import 'package:lanca_app/models/alerts.model.dart';
+import 'package:appbase_themedarklight/models/alerts.model.dart';
 
 final List<AlertsModel> listsAlerts = <AlertsModel>[
   new AlertsModel(

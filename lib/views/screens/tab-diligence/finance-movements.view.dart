@@ -12,9 +12,9 @@ class FinanceMovementsView extends StatefulWidget {
 class _FinanceMovementsViewState extends State<FinanceMovementsView> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: new DefaultTabController(
+    return Scaffold(
+      //debugShowCheckedModeBanner: false,
+      body: new DefaultTabController(
         length: 2,
         child: Scaffold(
           backgroundColor:
@@ -39,11 +39,11 @@ class _FinanceMovementsViewState extends State<FinanceMovementsView> {
                     new TabBar(
                       labelPadding: EdgeInsets.only(bottom: 10),
                       tabs: [new Text("ABERTO"), new Text("FINALIZADOS")],
-                      labelColor: Theme.of(context).primaryColor,
-                      indicatorColor: Theme.of(context).primaryColor,
+                      labelColor: Theme.of(context).accentColor,
+                      indicatorColor: Theme.of(context).accentColor,
                       unselectedLabelColor: globalController.isLightThemeGlobal
-                          ? Colors.black26
-                          : Colors.white,
+                          ? Colors.grey
+                          : Colors.grey.withOpacity(0.4),
                     ),
                   ],
                 ),

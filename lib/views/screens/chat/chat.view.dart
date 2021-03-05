@@ -1,19 +1,19 @@
 import 'package:appbase_themedarklight/app/database/chats.db.dart';
-import 'package:appbase_themedarklight/app/themes/app.theme.dart';
 import 'package:appbase_themedarklight/views/shared/components/app-bar-base.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../main.dart';
 import 'cards/chat-card.dart';
 
 class ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[100],
+        //backgroundColor: Colors.grey[100],
         appBar: BaseAppBar(
           title: "Chat",
-          backgroundColor: Colors.white,
+          //backgroundColor: Colors.white,
         ),
         body: Column(
           children: <Widget>[
@@ -51,9 +51,19 @@ class ChatView extends StatelessWidget {
                           disabledBorder: InputBorder.none,
                           contentPadding: EdgeInsets.only(
                               left: 15, bottom: 11, top: 11, right: 15),
-                          hintText: "Mensagem . . ."),
+                          hintText: "Mensagem . . .",
+                          hintStyle: Theme.of(context)
+                              .textTheme
+                              .headline3
+                              .copyWith(
+                                  color: globalController.isLightThemeGlobal
+                                      ? Colors.black
+                                      : Colors.white)),
                       keyboardType: TextInputType.multiline,
-                      style: AppTheme().textTheme.headline3,
+                      style: Theme.of(context).textTheme.headline3.copyWith(
+                          color: globalController.isLightThemeGlobal
+                              ? Colors.black
+                              : Colors.white),
                       validator: (val) {
                         if (val.length == 0) {
                           return "Email cannot be empty";
@@ -68,13 +78,14 @@ class ChatView extends StatelessWidget {
                     child: Container(
                       height: 40,
                       decoration: BoxDecoration(
-                          color: Colors.grey[300],
+                          color: Theme.of(context).primaryColor,
                           borderRadius: new BorderRadius.circular(8)),
-                      child: FlatButton(
+                      child: TextButton(
                         //color: Colors.red,
                         child: Icon(
                           FontAwesomeIcons.paperPlane,
                           size: 20,
+                          color: Theme.of(context).primaryColorDark,
                         ),
                         onPressed: () {},
                       ),

@@ -17,13 +17,16 @@ class _TabsControlState extends State<TabsControl> {
   // novas barras
   Widget _bottomNavigationBar(int selectedIndex) => BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Theme.of(context).primaryColor,
-        unselectedItemColor:
-            globalController.isLightThemeGlobal ? Colors.black26 : Colors.white,
+        selectedItemColor: Theme.of(context).primaryColorDark,
+        unselectedItemColor: globalController.isLightThemeGlobal
+            ? Colors.grey[300]
+            : Colors.grey,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         elevation: 2,
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: globalController.isLightThemeGlobal
+            ? Theme.of(context).backgroundColor
+            : Theme.of(context).primaryColor,
         onTap: (int index) => setState(() => _currentIndex = index),
         currentIndex: selectedIndex,
         items: const <BottomNavigationBarItem>[

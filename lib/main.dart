@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:appbase_themedarklight/views/screens/splash-screen/splash.view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

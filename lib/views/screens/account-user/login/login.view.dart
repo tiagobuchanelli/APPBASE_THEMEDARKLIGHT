@@ -1,8 +1,5 @@
-import 'package:appbase_themedarklight/app/themes/app.theme.dart';
 import 'package:appbase_themedarklight/app/utils/RouteGenerator.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../main.dart';
 import '../../tabs.control.dart';
 
 class LoginView extends StatefulWidget {
@@ -38,6 +35,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: globalController.isLightThemeGlobal ? Colors.white : Colors.red,
+
       body: Container(
         padding: EdgeInsets.only(top: 10, left: 24, right: 24, bottom: 10),
         child: Center(
@@ -49,10 +47,10 @@ class _LoginViewState extends State<LoginView> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Lança",
+                  "APP Teste",
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).primaryColorDark,
                       fontFamily: "Ramabhadra",
                       fontSize: 48),
                 ),
@@ -61,7 +59,7 @@ class _LoginViewState extends State<LoginView> {
                 padding: EdgeInsets.only(bottom: 30, top: 10),
                 child: Center(
                   child: Text(
-                    "Bem vindo ao Sacai!",
+                    "Bem vindo!",
                     style: Theme.of(context)
                         .textTheme
                         .headline2
@@ -75,22 +73,18 @@ class _LoginViewState extends State<LoginView> {
                   controller: _emailCtrl,
                   autofocus: false,
                   keyboardType: TextInputType.emailAddress,
-                  style: Theme.of(context).textTheme.headline2.copyWith(
-                        color: Colors.red,
-                        fontWeight: FontWeight.normal,
-                      ),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(28, 16, 28, 16),
                       hintText: "E-mail",
+                      hintStyle: Theme.of(context).textTheme.headline2,
                       filled: true,
-                      fillColor: globalController.isLightThemeGlobal
-                          ? Colors.transparent
-                          : Colors.grey[50],
+                      fillColor: Theme.of(context).primaryColor,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
                               //color: Theme.of(context).primaryColor, width: 2)),
-                              color: Colors.grey[300],
+                              color: Theme.of(context).primaryColor,
                               width: 1)),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -106,9 +100,7 @@ class _LoginViewState extends State<LoginView> {
                   autofocus: false,
                   obscureText: _isHidePass,
                   keyboardType: TextInputType.text,
-                  style: Theme.of(context).textTheme.headline2.copyWith(
-                      color: Colors.black.withOpacity(0.7),
-                      fontWeight: FontWeight.normal),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                       suffixIcon: GestureDetector(
                         onTap: () {
@@ -122,15 +114,14 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       contentPadding: EdgeInsets.fromLTRB(28, 16, 28, 16),
                       hintText: "Senha",
+                      hintStyle: Theme.of(context).textTheme.headline2,
                       filled: true,
-                      fillColor: globalController.isLightThemeGlobal
-                          ? Colors.transparent
-                          : Colors.grey[50],
+                      fillColor: Theme.of(context).primaryColor,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide(
                               //color: Theme.of(context).primaryColor, width: 2)),
-                              color: Colors.grey[300],
+                              color: Theme.of(context).primaryColor,
                               width: 1)),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -143,8 +134,7 @@ class _LoginViewState extends State<LoginView> {
                 padding: EdgeInsets.only(top: 20, bottom: 20),
                 child: RaisedButton(
                   child: Text("Entrar",
-                      style: Theme.of(context).textTheme.headline2.copyWith(
-                          fontWeight: FontWeight.normal, color: Colors.white)),
+                      style: Theme.of(context).textTheme.headline2),
                   color: Theme.of(context).primaryColor,
                   elevation: 0,
                   padding: EdgeInsets.fromLTRB(28, 15, 28, 15),
@@ -163,10 +153,7 @@ class _LoginViewState extends State<LoginView> {
                   child: GestureDetector(
                     child: Text(
                       "Esqueceu a senha?",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline1
-                          .copyWith(fontWeight: FontWeight.normal),
+                      style: Theme.of(context).textTheme.headline1,
                     ),
                     onTap: () {
                       Navigator.pushNamed(
@@ -189,10 +176,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   Text(
                     "ou",
-                    style: AppTheme()
-                        .textTheme
-                        .headline3
-                        .copyWith(color: Colors.grey),
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   Expanded(
                     child: new Container(
@@ -215,11 +199,12 @@ class _LoginViewState extends State<LoginView> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {},
-                          color: Colors.grey[50],
+                          color: Theme.of(context).primaryColor,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30),
-                              side: BorderSide(color: Colors.grey[200])),
+                              side: BorderSide(
+                                  color: Theme.of(context).primaryColor)),
                           child: Container(
                             padding: EdgeInsets.all(10),
                             child: Padding(
@@ -241,11 +226,12 @@ class _LoginViewState extends State<LoginView> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {},
-                          color: Colors.grey[50],
+                          color: Theme.of(context).primaryColor,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30),
-                              side: BorderSide(color: Colors.grey[200])),
+                              side: BorderSide(
+                                  color: Theme.of(context).primaryColor)),
                           child: Container(
                             padding: EdgeInsets.all(10),
                             child: Padding(
@@ -267,11 +253,12 @@ class _LoginViewState extends State<LoginView> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {},
-                          color: Colors.grey[50],
+                          color: Theme.of(context).primaryColor,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30),
-                              side: BorderSide(color: Colors.grey[200])),
+                              side: BorderSide(
+                                  color: Theme.of(context).primaryColor)),
                           child: Container(
                             padding: EdgeInsets.all(10),
                             child: Padding(
@@ -291,7 +278,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 30,
               ),
               Padding(
                   padding: EdgeInsets.only(top: 20, bottom: 0),
@@ -300,10 +287,7 @@ class _LoginViewState extends State<LoginView> {
                     child: GestureDetector(
                       child: Text(
                         "Ainda não tem conta?",
-                        style: AppTheme()
-                            .textTheme
-                            .headline1
-                            .copyWith(color: Colors.black.withOpacity(0.7)),
+                        style: Theme.of(context).textTheme.headline1,
                       ),
                       onTap: () {
                         FocusScope.of(context).requestFocus(myFocusNode);
@@ -311,30 +295,6 @@ class _LoginViewState extends State<LoginView> {
                       },
                     ),
                   )),
-              SizedBox(
-                height: 50,
-              ),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Center(
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                        RaisedButton(
-                            color: Colors.blue,
-                            child: Text("Light Theme",
-                                style: TextStyle(color: Colors.white)),
-                            onPressed: () {
-                              isLightTheme.add(true);
-                            }),
-                        RaisedButton(
-                            color: Colors.black,
-                            child: Text("Dark Theme",
-                                style: TextStyle(color: Colors.white)),
-                            onPressed: () {
-                              isLightTheme.add(false);
-                            }),
-                      ])))
             ],
           ),
         )),
